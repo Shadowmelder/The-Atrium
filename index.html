@@ -37,6 +37,8 @@ Hourglass figure, [$rival_haircolor] hair, [$rival_eyecolor] eyes. A smirk runni
 
 A menace, isn&#39;t she?
 
+I&#39;ve seen her before, or someone like her. I can&#39;t tell how I know her, yet I do. Perhaps she knows me as well?
+
 She closes in and my body tenses. I feel my lungs breathing quicker. She is standing at arm&#39;s length from me as she eyes me up and down.
 
 &quot;Meghan, is it? I&#39;ve finally found you,&quot; she said, crossing her arms.
@@ -87,7 +89,13 @@ My knees buckle as she continues keeping me against the wall with the wedgie—t
 ](else:)[
 &quot;Don&#39;t worry. This won&#39;t take much longer,&quot; she chuckles and I feel her grip tighten, &quot;I&#39;m almost finished with you.&quot;
 ]&lt;/p&gt;
+(if: $alpha &gt;= 1)[
+[[Ignore her-&gt;Overconfidence]]
+](else-if: $beta &gt;= 1)[
+[[Hold on-&gt;Overconfidence]]
+](else:)[
 [[Stay strong-&gt;Overconfidence]]
+]
 }]</tw-passagedata><tw-passagedata pid="3" name="Cornered" tags="" position="952,352" size="100,100">I stop wasting time and make a run for it, turning on my heels as I sprint away without looking back.
 
 I can hear her laughter bouncing off the walls behind me.
@@ -168,8 +176,19 @@ She&#39;s facing away after humiliating me like that—not even considering me a
 She seems rather distracted for having just given me a massive wedgie.
 ]}
 
-{(unless: ($beta - $alpha) &lt; -1)[[[Finish fixing my underwear-&gt;Wait]]&lt;br&gt;]
-(unless: ($alpha - $beta) &lt; -1)[[[Wedgie her-&gt;Payback]] ]}</tw-passagedata><tw-passagedata pid="6" name="Wait" tags="" position="1578,277" size="100,100">{(set: $beta to $beta + 1)
+{(unless: ($beta - $alpha) &lt; -1)[
+(if: $beta &gt; 1)[
+[[Wait for her to address you-&gt;Wait]]
+](else:)[
+[[Finish fixing my underwear-&gt;Wait]]
+]&lt;br&gt;]
+(unless: ($alpha - $beta) &lt; -1)[
+(if: $alpha &gt; 1)[
+[[Get my revenge-&gt;Payback]]
+](else:)[
+[[Wedgie her-&gt;Payback]]
+]
+]}</tw-passagedata><tw-passagedata pid="6" name="Wait" tags="" position="1578,277" size="100,100">{(set: $beta to $beta + 1)
 I ignore her, fixing my underwear while trying to keep my mouth shut so she can&#39;t hear my moaning. Every small pull hurts, though not nearly as much as knowing that she did this to me. She gave me a wedgie, and if she wanted she could have done much worse and I wouldn’t have stopped her.}
 
 &quot;Come here. There&#39;s one more thing to discuss,&quot; she commands, beckoning me with her hand.
@@ -225,7 +244,7 @@ She is stronger than me. Even though I had the edge by surprising her, it become
 
 [[Release her-&gt;Stop Struggling]]
 [[Give her a wedgie-&gt;First Strike]]</tw-passagedata><tw-passagedata pid="11" name="Start" tags="" position="299,499" size="100,100">The Atrium
-(text-style: &quot;subscript&quot;)[v.0.0.3]
+(text-style: &quot;subscript&quot;)[v.0.0.4 by Shadowmelder]
 
 [[[Wake up-&gt;Startup]]]</tw-passagedata><tw-passagedata pid="12" name="Surrender" tags="Sub Rival" position="951,100" size="100,100">{(set: $rival to $rival + 1)(set: $beta to $beta + 1)
 I turn around with hesitation, exposing my back—and my butt—to her. I hear a giggle as I do so, and a shiver runs down my spine.}
